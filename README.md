@@ -7,10 +7,10 @@ This repository provides code is designed to enable rapid prediction of optical 
 Due to symmetries in the crstal, only one fourth of the total crystal needs to be considered.  Every hole in the quarter of the crystal of interest is given and index and corresponding dx, dy, and scale parameters.  The blaboomerang type holes are scales in all dimensions according to the scale factor.  The boomerang-dagger holes have the length of the legs scaled according to the scale facotr.
 
 Boomerang type hole:
-![alt text](images/boomerang_type_hole.png)
+![boomerang_type_hole](https://github.com/user-attachments/assets/140915b9-39f3-4844-90ad-ee6167f95757)
 
 Boomerange-dagger type hole:
-![alt text](boomerang_dagger_type_hole.png)
+![boomerang_dagger_type_hole](https://github.com/user-attachments/assets/7b8010e7-eb88-4962-be7f-e16f2a390611)
 
 Indexing and parameterization of the crystal:
-![alt text](BDT parameterization.png)
+![parameter_layout](https://github.com/user-attachments/assets/9aa47127-5da9-49ee-ad4d-6e292327e275)
