@@ -4,4 +4,13 @@ The aim of this code base is creating a neural net capable of accuratly predicti
 
 This repository provides code is designed to enable rapid prediction of optical and mechanical quality facotrs of variants of the base design.  In particular, the model is trained to predict optical and mechanical properties based on displacements and scale changes in the etched crystal holes.
 
-![alt text](https://github.com/[linuwoodard]/[BDTNet]/)
+Due to symmetries in the crstal, only one fourth of the total crystal needs to be considered.  Every hole in the quarter of the crystal of interest is given and index and corresponding dx, dy, and scale parameters.  The blaboomerang type holes are scales in all dimensions according to the scale factor.  The boomerang-dagger holes have the length of the legs scaled according to the scale facotr.
+
+Boomerang type hole:
+![alt text](https://github.com/[linuwoodard]/[BDTNet]/images/boomerang_type_hole.png)
+
+Boomerange-dagger type hole:
+![alt text](https://github.com/[linuwoodard]/[BDTNet]/images/boomerang_dagger_type_hole.png)
+
+Indexing and parameterization of the crystal:
+![alt text](https://github.com/[linuwoodard]/[BDTNet]/images/BDT parameterization.png)
