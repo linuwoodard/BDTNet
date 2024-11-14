@@ -3,6 +3,7 @@
 import scipy.io as sio
 import numpy as np
 import os
+import json
 
 def load_data(data_path):
     '''
@@ -28,3 +29,31 @@ def load_data(data_path):
     paramsMat = data['paramsMat']
     return mechFreq, optFreq, mechQ, optQ, paramsMat
 
+
+def write_json(data, path):
+    '''
+    saves python dictionary to a json file.
+    Inputs:
+        data: python dictionary
+        path: path to save the json file
+
+    Outputs:
+        None
+    '''
+    print('Writing data to: ', path)
+    with open(path, 'w') as json_file:
+        json.dump(data, json_file, indent=4)  # indent=4 for pretty printing
+
+
+def read_json(path):
+    '''
+    reads json file and returns the data as python dictionary
+    Inputs:
+        path: path to the json file
+    
+    Outputs:
+        data: python dictionary
+    '''
+    with open(path, 'r') as json_file:
+        data = json.load(json_file)
+    return data
