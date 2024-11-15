@@ -59,7 +59,7 @@ def read_json(path):
     return data
 
 
-def show_predicted_Qs(example_numbers, batch_number, test_dataset, model):
+def show_predicted_Qs(example_numbers, batch_number, dataset, model):
     """
     given tensorflow dataset, model, and example numbers, this function prints the predicted Qs for the examples
     as well as the Qs from the dataset.
@@ -71,12 +71,13 @@ def show_predicted_Qs(example_numbers, batch_number, test_dataset, model):
         model: trained model
 
     Outputs:
+        predicted, true
     """
 
     train_numbers = example_numbers
 
 
-    test_iterator = iter(test_dataset)
+    test_iterator = iter(dataset)
     for batch in range(batch_number):
         # itterate to the batch of interest
         batch_X, batch_Y = next(test_iterator)
