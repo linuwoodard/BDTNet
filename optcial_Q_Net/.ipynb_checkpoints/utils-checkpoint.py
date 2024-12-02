@@ -4,7 +4,6 @@ import scipy.io as sio
 import numpy as np
 import os
 import json
-import matplotlib.pyplot as plt
 
 def load_data(data_path):
     '''
@@ -103,43 +102,3 @@ def show_predicted_Qs(example_numbers, batch_number, dataset, model):
         print("true Q = {}\n".format(10**(single_label[0])))
 
     return predicted, true
-
-
-def show_train_test_dist(train_dataset, test_dataset):
-    """
-    plots distribution of optical Qs for train and test datasets.
-    Input datasets must be before batching.
-    Inputs:
-        train_data: type = tf.data.Dataset 
-        test_data: type = tf.data.Dataset
-
-    Outputs:
-        train_optQ: np.array of optical Qs from training dataset
-        test_optQ: np.array of optical Qs from testing dataset
-    """
-
-    # Extract optQ_linearized from train and test datasets
-    train_optQ = [optQ for _, optQ in train_dataset]
-    test_optQ = [optQ for _, optQ in test_dataset]
-    ## let's actually look at our data breakup
-    # Convert to NumPy arrays for histogram plotting
-    train_optQ = np.array(train_optQ)
-    test_optQ = np.array(test_optQ)
-
-    # Plot histograms
-    plt.figure(figsize=(8, 6))
-    plt.subplot(1, 1, 1)
-    plt.hist(train_optQ, bins=30, color='blue', alpha=0.7, label='Train Dataset')
-    plt.title('Histogram of optQ_linearized - Train Dataset')
-    plt.xlabel('optQ_linearized')
-    plt.ylabel('Frequency')
-    plt.legend()
-
-    plt.subplot(1, 1, 1)
-    plt.hist(test_optQ, bins=30, color='orange', alpha=0.7, label='Test Dataset')
-    plt.title('Histogram of optQ_linearized - Test Dataset')
-    plt.xlabel('optQ_linearized')
-    plt.ylabel('Frequency')
-    plt.legend()
-
-    return train_optQ, test_optQ
